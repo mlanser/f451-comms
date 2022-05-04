@@ -1,0 +1,33 @@
+[f451_main]
+location = _YOUR_LOCATION_
+location_tz = _YOUR_TIME_ZONE_
+latitude = _YOUR_LATITUDE_
+longitude = _YOUR_LONGITUDE_
+
+channels = _DEFAULT_CHANNEL_ONE_|_DEFAULT_CHANNEL_TWO_
+channel_map = email:f451_mailgun|sms:f451_twilio|twitter:f451_twitter|slack:f451_slack|forums:f451_slack
+
+from = name:_DEFAULT_SENDER_NAME_|email:_DEFAULT_SENDER_EMAIL_|phone:_DEFAULT_SENDER_PHONE_|slack:_DEFAULT_SENDER_SLACK_NAME_|twitter:_DEFAULT_SENDER_TWITTER_NAME_
+;from_name = _DEFAULT_SENDER_NAME_
+;from_email = _DEFAULT_SENDER_EMAIL_
+;from_phone = _DEFAULT_SENDER_PHONE_
+;from_slack = _DEFAULT_SENDER_SLACK_NAME_
+;from_twitter = _DEFAULT_SENDER_TWITTER_NAME_
+
+to = name:_DEFAULT_TO_NAME_|email:_DEFAULT_TO_EMAIL_|phone:_DEFAULT_TO_PHONE_|slack:_DEFAULT_TO_SLACK_NAME_|twitter:_DEFAULT_TO_TWITTER_NAME_
+;to_name = _DEFAULT_TO_NAME_
+;to_email = _DEFAULT_TO_EMAIL_
+;to_phone = _DEFAULT_TO_PHONE_
+;to_slack = _DEFAULT_TO_SLACK_NAME_
+;to_twitter = _DEFAULT_TO_TWITTER_NAME_
+
+[f451_mailgun]
+subject = _DEFAULT_EMAIL_SUBJECT_
+
+[f451_slack]
+icon_emoji = _USER_ICON_EMOJI_
+to_channel = _DEFAULT_SLACK_CHANNEL_
+
+[f451_twilio]
+
+[f451_twitter]

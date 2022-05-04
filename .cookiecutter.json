@@ -1,0 +1,12 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Martin Lanser",
+  "development_status": "Development Status :: 1 - Planning",
+  "email": "martinlanser@gmail.com",
+  "friendly_name": "f451 Communications Module",
+  "github_user": "mlanser",
+  "license": "MIT",
+  "package_name": "f451_comms",
+  "project_name": "f451-comms",
+  "version": "0.0.0"
+}
