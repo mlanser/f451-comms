@@ -1,4 +1,4 @@
 sphinx==4.2.0
 sphinx_argparse_cli==1.8.3
-sphinx-click==3.0.2
+sphinx-click==4.0.3
 sphinx-rtd-theme==1.0.0
