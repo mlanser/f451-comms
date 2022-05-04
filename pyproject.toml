@@ -23,11 +23,10 @@ rich = "^12.2.0"
 slack-bolt = "^1.11.1"
 tweepy = "^4.5.0"
 nox = "^2022.1.7"
-twilio = "^7.7.0"
+twilio = "^7.9.0"
 konsole = "^0.6.0"
 sendgrid = "^6.9.7"
 types-requests = "^2.27.16"
-pytest-mock = "^3.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"
