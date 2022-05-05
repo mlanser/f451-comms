@@ -19,7 +19,7 @@ Files and folders
 -----------------
 
 - **Root folder** -- holds misc config files, etc. for `git <https://git-scm.com/>`__, `Poetry <https://python-poetry.org/>`__, and other tools.
-- ``docs`` **folder** -- holds most documentation in ``.rst`` files. The exceptions are files like ``README.rst``, ``LICENSE.rst`` and other more generic project documentation.
+- ``docs`` **folder** -- holds most documentation in ``.rst`` files. The exceptions are files like ``README.rst``, ``LICENSE.rst`` and other more generic project documentation which are stored in the root folder.
 - ``src`` **folder** -- holds all source code files.
 - ``tests`` **folder** -- holds all test files.
 
@@ -27,10 +27,10 @@ Files and folders
 Other notes
 ===========
 
-Again, I try to be very consistent and my code should (hopefully) be easy to follow. I also try to document a lot of stuff, both with in-code comments and actual project documentation. Why? Because I have the memory of a goldfish [1]_ and I forget after week or so why I did whatever I did.
+Again, I try to be very consistent, and my code should (hopefully) be easy to follow. I also try to document a lot of stuff, both with in-code comments and actual project documentation. Why? Because I have the memory of a goldfish [1]_ and I forget why I did whatever I did after a week or so.
 
-Please note, though, that I am a one-man-band and there are bound to be mistakes, and, quite likely, a bug or two (or more) in my code and documentation. I am `dog-fooding <https://en.wikipedia.org/wiki/Eating_your_own_dog_food>`__ my packages and libraries as I use them in my various projects. And, of course, I try to fix bugs and correct mistakes as I find them.
+Now, I am a one-person band, and there are bound to be mistakes and, quite likely, a bug or two (or more) in my code and documentation. However, I am `dogfooding <https://en.wikipedia.org/wiki/Eating_your_own_dog_food>`__ my packages and libraries as I use them in my various projects, and I try to fix bugs and correct mistakes as I find them.
 
-Now, if you find a problem, please feel free to log an issue. Or, better yet, maybe you can help fix the issue and submit a PR 🤓
+And, as always, if you find a problem, please feel free to log an issue. Or, better yet, maybe you can help fix the issue and submit a PR 🤓
 
 .. [1] Turns out goldfish may have better memory than me: `Do goldfish really have a 3-second memory? <https://www.livescience.com/goldfish-memory.html>`__

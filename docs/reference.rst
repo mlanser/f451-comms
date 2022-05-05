@@ -62,6 +62,34 @@ Sub-module - f451_comms.providers.twitter
    :members:
    :noindex:
 
+Sub-module - f451_comms.entity
+------------------------------
+
+   .. automodule:: f451_comms.entity
+      :members:
+      :noindex:
+
+Sub-module - f451_comms.exceptions
+----------------------------------
+
+   .. automodule:: f451_comms.exceptions
+      :members:
+      :noindex:
+
+Sub-module - f451_comms.processor
+---------------------------------
+
+   .. automodule:: f451_comms.processor
+      :members:
+      :noindex:
+
+Misc. utilities - f451_comms.utils
+----------------------------------
+
+   .. automodule:: f451_comms.utils
+      :members:
+      :noindex:
+
 Keywords and values for ``attribs`` argument and config files
 -------------------------------------------------------------
 

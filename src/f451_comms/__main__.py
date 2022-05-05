@@ -217,7 +217,7 @@ def init_cli_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--msg",
         action="store",
-        default=f"Testing 'f451-comms' module -- {faker.text(40)}",
+        default=f"Testing 'f451-comms' module -- <some random text>",
         type=str,
         help="Text to send",
     )
