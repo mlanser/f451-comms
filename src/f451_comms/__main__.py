@@ -217,21 +217,21 @@ def init_cli_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--msg",
         action="store",
-        default=f"Testing 'f451-comms' module -- {faker.text(40)}",
+        default="Testing 'f451-comms' module -- <some random text>",
         type=str,
         help="Text to send",
-    )
-    parser.add_argument(
-        "--config",
-        action="store",
-        type=str,
-        help="Path to config file",
     )
     parser.add_argument(
         "--secrets",
         action="store",
         type=str,
-        help="Path to config file",
+        help="Path to primary config file",
+    )
+    parser.add_argument(
+        "--config",
+        action="store",
+        type=str,
+        help="Path to secondary config file",
     )
     parser.add_argument(
         "--log",

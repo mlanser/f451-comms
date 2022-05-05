@@ -78,9 +78,9 @@ branch = true
 source = ["f451_comms", "tests"]
 
 [tool.coverage.report]
-show_missing = true
-skip_empty = true
 fail_under = 100
+show_missing = true
+# skip_empty = true
 
 [tool.mypy]
 strict = true

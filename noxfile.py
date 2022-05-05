@@ -130,7 +130,7 @@ def mypy(session: Session) -> None:
 def tests(session: Session) -> None:
     """Run the test suite."""
     session.install(".")
-    session.install("coverage[toml]", "pytest", "pygments")
+    session.install("coverage[toml]", "pytest", "pytest-mock", "pygments")
     try:
         session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
     finally:
@@ -142,6 +142,7 @@ def tests(session: Session) -> None:
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
     args = session.posargs or ["report"]
+    args += ["--skip-empty", "--ignore-errors", "--fail-under=85"]
 
     session.install("coverage[toml]")
 
@@ -155,7 +156,7 @@ def coverage(session: Session) -> None:
 def typeguard(session: Session) -> None:
     """Runtime type checking using Typeguard."""
     session.install(".")
-    session.install("pytest", "typeguard", "pygments")
+    session.install("pytest", "pytest-mock", "typeguard", "pygments")
     session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
 
 
@@ -202,7 +203,14 @@ def docs(session: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     session.install(".")
-    session.install("sphinx", "sphinx-autobuild", "sphinx-click", "furo")
+    session.install(
+        "sphinx",
+        "sphinx-autobuild",
+        "sphinx-argparse-cli",
+        "sphinx-click",
+        "sphinx-rtd-theme",
+        "furo",
+    )
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():

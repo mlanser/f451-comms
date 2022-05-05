@@ -10,7 +10,7 @@ The following keywords and values are primarily used to pass additional argument
 
 - ``app_token``
     - Required for:
-        - Slack (`Slack <send_slack.html>`__) -- Slack app token as ``str``
+        - `Slack <send_slack.html>`__ -- Slack app token as ``str``
     - Example .ini entry:
         - ``app_token = xapp-0-X00000000-000000000-00000000xxxxx00000000xxxxx00000000``
 
@@ -19,14 +19,14 @@ The following keywords and values are primarily used to pass additional argument
 - ``attachments``
     - Optional for:
         - Email (`Mailgun <send_mailgun.html>`__) -- one or more file names as ``str`` or ``list`` of ``str``
-        - Slack (`Slack <send_slack.html>`__) -- one or more file names as ``str`` or ``list`` of ``str``
+        - `Slack <send_slack.html>`__ -- one or more file names as ``str`` or ``list`` of ``str``
     - Examples:
         - Single attachment: ``{"attachments": path/to/file1.txt"}``
         - Multiple attachments: ``{"attachments": ["path/to/file1.txt", "path/to/file2.txt"]}``
 
 - ``auth_secret``
     - Required for:
-        - Twitter (`Twitter <send_twitter.html>`__) -- Twitter auth secret as ``str``
+        - `Twitter <send_twitter.html>`__ -- Twitter auth secret as ``str``
     - Example .ini entry:
         - ``auth_secret = xx0000000000xx000000x0000000x0xx00000xxx00000``
 
@@ -34,9 +34,9 @@ The following keywords and values are primarily used to pass additional argument
 
 - ``auth_token``
     - Required for:
-        - Slack (`Slack <send_slack.html>`__) -- Slack auth token as ``str``
+        - `Slack <send_slack.html>`__ -- Slack auth token as ``str``
         - SMS (`Twilio <send_twilio.html>`__) -- Twilio auth token as ``str``
-        - Twitter (`Twitter <send_twitter.html>`__) -- Twitter auth token as ``str``
+        - `Twitter <send_twitter.html>`__ -- Twitter auth token as ``str``
     - Example .ini entry:
         - ``auth_token = 000000000000000000000000000000000000000000000``
 
@@ -71,13 +71,20 @@ The following keywords and values are primarily used to pass additional argument
         - Map *email* and *sms* keywords: ``channel_map = email:f451_mailgun|sms:f451_twilio``
 
 - ``debug``
-    - **Reserved** for future use
+    - *Reserved*
 
 - ``file_title``
     - Optional for:
-        - Slack (`Slack <send_slack.html>`__) -- file title as ``str``
+        - `Slack <send_slack.html>`__ -- file title as ``str``
     - Examples:
         - Simple title: ``{"file_title": "List of Gotham City crime bosses"}``
+
+- ``from``
+    - **Optional for:** ``main`` section. Complete sender info (e.g. name, phone, email, etc.) as  ``str`` or ``list`` of ``str``
+    - Examples:
+        - Complete sender info: ``from = name:Batman|email:batman@example.com|phone:+12125550001|slack:Batman|twitter:Batman``
+
+    .. note:: Use ``from`` attribute instead of individual attributes (e.g ``from_name``, ``from_email``, ``from_phone``, etc.).
 
 - ``from_domain``
     - Required for:
@@ -88,7 +95,7 @@ The following keywords and values are primarily used to pass additional argument
     .. warning:: Do NOT store this value in source code!
 
 - ``from_email``
-    - *Reserved for future use*
+    - *Reserved*
 
 - ``from_name``
     - Optional for:
@@ -145,14 +152,14 @@ The following keywords and values are primarily used to pass additional argument
 - ``media``
     - Optional for:
         - SMS (`Twilio <send_twilio.html>`__) -- one or more file names as ``str`` or ``list`` of ``str``
-        - Twitter (`Twitter <send_twitter.html>`__) -- one or more file names as ``str`` or ``list`` of ``str``
+        - `Twitter <send_twitter.html>`__ -- one or more file names as ``str`` or ``list`` of ``str``
     - **Valid formats:** .png, .jpg, .gif
     - Examples:
         - Single attachment: ``{"attachments": path/to/file1.txt"}``
         - Multiple attachments: ``{"attachments": ["path/to/file1.txt", "path/to/file2.txt"]}``
 
 - ``method_update``
-    - *Reserved for future use*
+    - *Reserved*
 
 - ``method_dm``
     - Optional for:
@@ -160,6 +167,12 @@ The following keywords and values are primarily used to pass additional argument
     - **Default:** ``False``
     - Examples:
         - Send message as DM: ``{"method_dm": True}``
+
+- ``name``
+    - *Reserved*
+
+- ``phone``
+    - *Reserved*
 
 - ``priv_api_key``
     - Required for:
@@ -178,7 +191,7 @@ The following keywords and values are primarily used to pass additional argument
     .. warning:: Do NOT store this value in source code!
 
 - ``recipient``
-    - *Reserved for future use*
+    - *Reserved*
 
 - ``recipient_data``
     - Optional for:
@@ -188,11 +201,14 @@ The following keywords and values are primarily used to pass additional argument
 
 - ``signing_secret``
     - Required for:
-        - Slack (`Slack <send_slack.html>`__) -- signing secret as ``str``
+        - `Slack <send_slack.html>`__ -- signing secret as ``str``
     - Example .ini entry:
         - ``signing_secret = xxxxx0000000000xxx000000000xxxx00000``
 
     .. warning:: Do NOT store this value in source code!
+
+- ``slack``
+    - *Reserved*
 
 - ``subject``
     - Required for:
@@ -223,6 +239,13 @@ The following keywords and values are primarily used to pass additional argument
     - **Default:** ``False``
     - Examples:
         - Enable *test mode*: ``{"testmode": True}``
+
+- ``to``
+    - **Optional for:** ``main`` section. Complete recipient info (e.g. name, phone, email, etc.) as  ``str`` or ``list`` of ``str``
+    - Examples:
+        - Complete recipient info: ``from = name:Batman|email:batman@example.com|phone:+12125550001|slack:Batman|twitter:Batman``
+
+    .. note:: Use ``to`` attribute instead of individual attributes (e.g ``to_name``, ``to_email``, ``to_phone``, etc.).
 
 - ``to_channel``
     - Required for:
@@ -268,9 +291,12 @@ The following keywords and values are primarily used to pass additional argument
     - Examples:
         - Enable tracking: ``{"tracking": True}``
 
+- ``twitter``
+    - *Reserved*
+
 - ``user_key``
     - Required for:
-        - Twitter (`Twitter <send_twitter.html>`__) -- Twitter user key as ``str``
+        - `Twitter <send_twitter.html>`__ -- Twitter user key as ``str``
     - Example .ini entry:
         - ``user_key = xxxxx0000000000xxx000000000xxxx00000``
 
@@ -278,7 +304,7 @@ The following keywords and values are primarily used to pass additional argument
 
 - ``user_secret``
     - Required for:
-        - Twitter (`Twitter <send_twitter.html>`__) -- Twitter user secret as ``str``
+        - `Twitter <send_twitter.html>`__ -- Twitter user secret as ``str``
     - Example .ini entry:
         - ``user_secret = xxxxx0000000000xxx000000000xxxx00000xxxxx00000xxxxx0000``
 
