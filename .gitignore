@@ -46,3 +46,4 @@ libs/*
 # Exceptions -- we want to track these files
 # -------------------------------------
 !pytest.ini
+!/.coverage.yml
