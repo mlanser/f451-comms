@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "f451-comms"
-version = "0.0.0"
+version = "0.1.0"
 description = "f451 Communications Module"
 authors = ["Martin Lanser <martinlanser@gmail.com>"]
 license = "MIT"
