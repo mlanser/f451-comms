@@ -14,11 +14,8 @@ from typing import List
 import konsole
 import src.f451_comms.constants as const
 from faker import Faker
-from requests import Response as reqResponse
 from rich import print as rprint
-from rich import print_json as rprintJSON
 from rich import traceback
-from rich.pretty import pprint as rpp
 from rich.rule import Rule
 from src.f451_comms.comms import Comms
 from src.f451_comms.exceptions import CommunicationsError
@@ -85,49 +82,6 @@ def _create_slack_msg_block(inMsg: str) -> List[Dict[str, Any]]:
             ],
         },
     ]
-
-
-def _pretty_print_mailgun_response(item: Any) -> None:
-    """Helper: Pretty print Mailgun response."""
-    rprint(item.ok)
-    rprint(item.status_code)
-    rprint(item.reason)
-    rprintJSON(item.text)
-
-
-def _pretty_print_twilio_response(item: Any) -> None:
-    """Helper: Pretty print Twilio response."""
-    rprint(f"SID: {item.sid}")
-    rprint(f"STATUS: {item.status}")
-
-
-def _pretty_print_other_response(item: Any) -> None:
-    """Helper: Pretty print other response."""
-    rprint(type(item))
-    rpp(item, expand_all=True)
-
-
-def pretty_print_response_records(inData: Any) -> None:
-    """Helper: Pretty print response records."""
-
-    def _print_item(item: Any, printRule: bool = False) -> None:
-        if printRule:
-            rprint(Rule())
-
-        if isinstance(item, reqResponse):
-            _pretty_print_mailgun_response(item)
-        else:
-            _pretty_print_other_response(item)
-
-    recList = inData if isinstance(inData, list) else [inData]
-
-    for i, rec in enumerate(recList):
-        if isinstance(rec, list):
-            for ii, subRec in enumerate(rec):
-                _print_item(subRec, i > 0 and ii > 0)
-
-        else:
-            _print_item(rec, i > 0)
 
 
 def send_test_msg_via_mailgun(comms: Comms, msg: str) -> None:
@@ -258,10 +212,8 @@ def init_ini_parser(fNames: Any) -> ConfigParser:
     """
     parser = ConfigParser(interpolation=ExtendedInterpolation())
 
-    if not isinstance(fNames, list):
-        fNames = [fNames]
-
-    for fn in fNames:
+    tmpList = fNames if isinstance(fNames, list) else [fNames]
+    for fn in tmpList:
         tmpName = Path(fn).expanduser()
         if not tmpName.exists():
             raise ValueError(f"Config file '{tmpName}' does not exist.")

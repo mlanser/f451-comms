@@ -2,6 +2,7 @@
 import pytest
 import src.f451_comms.constants as const
 import src.f451_comms.providers.provider as provider
+from src.f451_comms.exceptions import CommunicationsError
 from src.f451_comms.exceptions import InvalidAttributeError
 
 
@@ -132,11 +133,45 @@ def test_create_Media_object(new_attachment_file):
     assert obj.clean == []
 
 
+def test_create_Response_object():
+    """Test ability to create a 'Response' object."""
+    resp = provider.Response(
+        status="OK",
+        provider="TEST",
+        data="TEST DATA",
+    )
+    assert resp.isOK
+
+
+def test_create_Response_object_with_errors():
+    """Test ability to create a 'Response' object with errors."""
+    resp = provider.Response(
+        status="OK", provider="TEST", data="TEST DATA", errors=["ERROR 1"]
+    )
+    assert not resp.isOK
+    with pytest.raises(CommunicationsError) as e:
+        resp.raise_on_errors()
+    assert e.type == CommunicationsError
+    assert "ERROR 1" in e.value.args[0]
+
+
+def test_pretty_print_response_records(capsys):
+    """Test ability to create a 'Response' object with errors."""
+    valStatus = "OK"
+    valProvider = "TEST PROVIDER"
+
+    resp = provider.Response(
+        status=valStatus,
+        provider=valProvider,
+        data="TEST DATA",
+    )
+
+    provider.pretty_print_response_records(resp)
+    captured = capsys.readouterr()
+    result = captured.out
+    assert valStatus in result.upper()
+    assert valProvider in result.upper()
+
+
 # from inspect import currentframe, getframeinfo
 # helpers.pp(capsys, data, currentframe())
-# helpers.pp(capsys, Hdrs['sql'], currentframe())
-# helpers.pp(capsys, Hdrs['raw'], currentframe())
-# helpers.pp(capsys, dataFName, currentframe())
-# helpers.pp(capsys, tblName, currentframe())
-# helpers.pp(capsys, dataOut, currentframe())
-# helpers.pp(capsys, dataIn, currentframe())

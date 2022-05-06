@@ -2,9 +2,11 @@
 # Default
 # -------------------------------------
 __pycache__/
-.mypy_cache/
+/.pytest_cache/
+/.mypy_cache/
 /.coverage
 /.coverage.*
+/htmlcov/
 /.nox/
 /.python-version
 /.pytype/
