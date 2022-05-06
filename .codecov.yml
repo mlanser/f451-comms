@@ -1,0 +1,12 @@
+coverage:
+  status:
+    project:
+      default:
+        informational: true  # make it non-blocking status check
+        target: auto   # auto compares coverage to prev base commit
+        threshold: 5%  # allow 5% drop from prev base commit coverage
+    patch:
+      default:
+        informational: true  # make it non-blocking status check
+        target: auto   # auto compares coverage to prev base commit
+        threshold: 5%  # allow 5% drop from prev base commit coverage
