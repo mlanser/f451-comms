@@ -16,6 +16,9 @@ from typing import Optional
 import src.f451_comms.constants as const
 import src.f451_comms.utils as utils
 from requests import Response as reqResponse
+from rich import print as rprint
+from rich.pretty import pprint as rpp
+from rich.rule import Rule
 from src.f451_comms.exceptions import CommunicationsError
 from src.f451_comms.exceptions import InvalidAttributeError
 from src.f451_comms.processor import AttributeProcessor
@@ -327,3 +330,24 @@ def process_media_list(
     fileList = [item.strip() for item in tmpList if verify_file(item.strip(), strict)]
 
     return fileList[:maxNum]
+
+
+def pretty_print_response_records(inData: Any) -> None:
+    """Helper: Pretty print response records."""
+
+    def _print_item(item: Any, printRule: bool = False) -> None:
+        if printRule:
+            rprint(Rule())
+
+        rprint(type(item))
+        rpp(item, expand_all=True)
+
+    recList = inData if isinstance(inData, list) else [inData]
+
+    for i, rec in enumerate(recList):
+        if isinstance(rec, list):
+            for ii, subRec in enumerate(rec):
+                _print_item(subRec, i > 0 and ii > 0)
+
+        else:
+            _print_item(rec, i > 0)

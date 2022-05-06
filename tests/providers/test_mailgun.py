@@ -270,9 +270,3 @@ def test_send_message_extensive(mocker, mailgunClient, new_attachment_file):
 
 # from inspect import currentframe, getframeinfo
 # helpers.pp(capsys, data, currentframe())
-# helpers.pp(capsys, Hdrs['sql'], currentframe())
-# helpers.pp(capsys, Hdrs['raw'], currentframe())
-# helpers.pp(capsys, dataFName, currentframe())
-# helpers.pp(capsys, tblName, currentframe())
-# helpers.pp(capsys, dataOut, currentframe())
-# helpers.pp(capsys, dataIn, currentframe())

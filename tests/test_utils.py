@@ -8,8 +8,6 @@ import src.f451_comms.utils as utils
 # =========================================================
 #     G L O B A L S   &   P Y T E S T   F I X T U R E S
 # =========================================================
-_DEFAULT_MSG_ = "Hello World!"
-_DEFAULT_TAG_ = "safe"
 _DEFAULT_TEST_STRING_ = "DEFAULT_TEST_STRING"
 
 _VALID_EMAIL_STRINGS_ = [
@@ -82,12 +80,6 @@ def valid_channel_map():
 def mixed_email_address_list():
     """Return valid email address strings."""
     return _VALID_EMAIL_STRINGS_
-
-
-@pytest.fixture()
-def mixed_tag_list():
-    """Return mixed tag strings."""
-    return [_DEFAULT_TAG_, "äpple", "nötter", "blåbär", "three", "four"]
 
 
 # =========================================================
