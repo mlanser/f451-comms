@@ -139,8 +139,8 @@ def valid_attribs_dict():
 @pytest.fixture()
 def new_config_file(tmpdir_factory):
     """Only create the filename, but not the actual file."""
-    testDir = tmpdir_factory.mktemp("test")
-    configFile = testDir.join(f"{uuid.uuid4().hex}.ini")
+    configFile = tmpdir_factory.mktemp("test").join(f"{uuid.uuid4().hex}.ini")
+    configFile.write("[section]\nkey = value")
 
     return str(configFile)
 
