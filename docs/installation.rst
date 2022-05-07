@@ -1,8 +1,8 @@
 Installation
 ============
 
-You can install the *f451 Communications* module via `pip <https://pip.pypa.io/en/stable/#>`__ from `PyPi <https://pypi.org/>`__:
+.. include:: ../README.rst
+    :start-after: install-start
+    :end-before: install-end
 
-.. code:: console
-
-   $ pip install f451-comms
+Add more text ... blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah

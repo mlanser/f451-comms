@@ -39,19 +39,60 @@ f451 Communications module
 .. warning:: This module is in early alpha stage. And while the code works (and passes all the tests), **use at your own risk 🤓**
 
 
-.. include:: tldr.rst
+TL;DR
+-----
+.. tldr-start
+
+This module provides a universal interface for various communications systems and services (e.g. email, Slack, SMS, etc.) and makes it possible to send the same message to several services with a single method call. The same call structure is used regardless of which services are enabled.
+
+.. tldr-end
 
 
-.. include:: installation.rst
+Installation
+------------
+
+.. install-start
+
+You can install the *f451 Communications* module via `pip <https://pip.pypa.io/en/stable/#>`__ from `PyPi <https://pypi.org/>`__:
+
+.. code:: console
+
+   $ pip install f451-comms
+
+.. install-end
 
 
-.. include:: quickstart.rst
+Quickstart
+----------
 
+.. qs-start
 
-.. _RDME background:
+A common use case for the *f451 Communications* module is in applications that send (usually programmatically generated) messages via one or more channels. The module assumes that you provide all necessary keys and secrets required to verify your credentials with the services linked to the channels that you want to use.
+
+It is recommended that you store these keys and secrets in a separate file (e.g. ``secrets.ini``). However, it is also possible to submit them -- for example during testing -- in the form of a so-called ``dict`` structure. Please review the section ":doc:`Configuration files<config_files>`" for more information.
+
+.. code-block::
+
+    from configparser import ConfigParser, ExtendedInterpolation
+    from f451_comms.comms import Comms
+
+    secrets = ConfigParser(interpolation=ExtendedInterpolation())
+    secrets.read("_PATH_TO_YOUR_SECRETS_FILE_")
+
+    comms = Comms(secrets)
+    comms.send_message("Hello world!", "all")
+
+The basic sequence is to first initialize the ``Comms`` object with the keys and secrets required to authenticate with the services that you want to use. After that you can send messages to one or more channels with a single method call to the ``Comms`` object.
+
+The ``send_message()`` method also has a 3rd argument that allows you to include additional attributes using a ``dict`` structure. These attributes can contain a wide variety of items. For example, you can include the HTML version of an email, or Slack blocks for more complex Slack messages. You can also include references to images to be included with the message, or files to be attached to emails, and so on.
+
+.. qs-end
+
 
 Background
 ----------
+
+.. bkgrnd-start
 
 This module was originally created to "scratch an itch" -- or, as we say in marketing parlance: to solve a particular use case. 😉 -- I had several single-purpose applications running on different devices (e.g. `Raspberry Pi <https://www.raspberrypi.org/>`_) configured to support specific hardware configurations (i.e. sensors and displays, etc.), services, or functions. And all applications were designed to notify me via different channels that certain events had occurred and so on.
 
@@ -72,14 +113,21 @@ But most importantly, I'm able to call a simple ``send_message()`` method, which
 
 - Other - *I know, this is really specific ... but there will be more* 😜
 
+.. bkgrnd-end
+
 
 Run a demo of this module
 -------------------------
+
+.. demo-start
 
 This module comes with a demo that allows you to experiment with sending messages to the various channels. Of course, you must first ensure that you have accounts with the services that you want to experiment with. You must also provide the appropriate credentials when starting the demo or it will simply fail to authenticate with the services you're trying to use.
 
 Please see the section "`Run demo`_" for more information.
 
+.. demo-end
+
+.. misc-start
 
 Contributing
 ------------
