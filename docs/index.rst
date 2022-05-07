@@ -39,7 +39,7 @@ Background and history
    :hidden:
    :maxdepth: 1
 
-   installation
+   Installation <installation>
    Getting started <quickstart>
    Requirements & dependencies <requirements>
    Run demo <demo>
@@ -48,8 +48,8 @@ Background and history
    Send Slack message <send_slack>
    Send SMS via Twilio <send_twilio>
    Send Twitter update & DM <send_twitter>
-   Modules & constants <reference>
    Configuration files <config_files>
+   Modules & constants <reference>
    Logging <logging>
    (Un-)conventions and other notes <conventions>
    contributing

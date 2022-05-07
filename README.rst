@@ -61,6 +61,8 @@ You can install the *f451 Communications* module via `pip <https://pip.pypa.io/e
 
 .. install-end
 
+Please see the section "`Installation`_" in the `main documentation <https://f451-comms.readthedocs.io/>`__ for more information.
+
 
 Quickstart
 ----------
@@ -69,7 +71,7 @@ Quickstart
 
 A common use case for the *f451 Communications* module is in applications that send (usually programmatically generated) messages via one or more channels. The module assumes that you provide all necessary keys and secrets required to verify your credentials with the services linked to the channels that you want to use.
 
-It is recommended that you store these keys and secrets in a separate file (e.g. ``secrets.ini``). However, it is also possible to submit them -- for example during testing -- in the form of a so-called ``dict`` structure. Please review the section ":doc:`Configuration files<config_files>`" for more information.
+It is recommended that you store these keys and secrets in a separate file (e.g. ``secrets.ini``). However, it is also possible to submit them -- for example during testing -- in the form of a so-called ``dict`` structure.
 
 .. code-block::
 
@@ -87,6 +89,20 @@ The basic sequence is to first initialize the ``Comms`` object with the keys and
 The ``send_message()`` method also has a 3rd argument that allows you to include additional attributes using a ``dict`` structure. These attributes can contain a wide variety of items. For example, you can include the HTML version of an email, or Slack blocks for more complex Slack messages. You can also include references to images to be included with the message, or files to be attached to emails, and so on.
 
 .. qs-end
+
+Please see the section "`Getting started`_" in the `main documentation <https://f451-comms.readthedocs.io/>`__ for more information.
+
+
+Run a demo of this module
+-------------------------
+
+.. demo-start
+
+This module comes with a demo that allows you to experiment with sending messages to the various channels. Of course, you must first ensure that you have accounts with the services that you want to experiment with. You must also provide the appropriate credentials when starting the demo or it will simply fail to authenticate with the services you're trying to use.
+
+.. demo-end
+
+Please see the section "`Run demo`_" in the `main documentation <https://f451-comms.readthedocs.io/>`__ for more information.
 
 
 Background
@@ -115,17 +131,10 @@ But most importantly, I'm able to call a simple ``send_message()`` method, which
 
 .. bkgrnd-end
 
+Documentation
+-------------
 
-Run a demo of this module
--------------------------
-
-.. demo-start
-
-This module comes with a demo that allows you to experiment with sending messages to the various channels. Of course, you must first ensure that you have accounts with the services that you want to experiment with. You must also provide the appropriate credentials when starting the demo or it will simply fail to authenticate with the services you're trying to use.
-
-Please see the section "`Run demo`_" for more information.
-
-.. demo-end
+Please refer to the `documentation <https://f451-comms.readthedocs.io/>`__ for more information.
 
 .. misc-start
 
@@ -163,4 +172,6 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _Contributor Guide: CONTRIBUTING.rst
 .. _Usage: https://f451-comms.readthedocs.io/en/latest/usage.html
 .. _Configuration files: https://f451-comms.readthedocs.io/en/latest/config_files.html
+.. _Installation: https://f451-comms.readthedocs.io/en/latest/installation.html
+.. _Getting started: https://f451-comms.readthedocs.io/en/latest/quickstart.html
 .. _Run demo: https://f451-comms.readthedocs.io/en/latest/demo.html
