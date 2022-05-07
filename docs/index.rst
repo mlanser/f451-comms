@@ -10,6 +10,9 @@
    :hidden:
    :maxdepth: 1
 
+   quickstart
+   installation
+   Requirements & dependencies <requirements>
    Run demo <demo>
    Send messages to multiple channels <send_message>
    Mailgun email <send_mailgun>
@@ -22,5 +25,5 @@
    (Un-)conventions and other notes <conventions>
    contributing
    Code of Conduct <codeofconduct>
-   License <license>
+   license
    Changelog <https://github.com/mlanser/f451-comms/releases>
