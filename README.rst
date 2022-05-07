@@ -36,9 +36,6 @@ f451 Communications module
    :alt: Black
 
 
-.. warning:: This module is in early alpha stage. And while the code works (and passes all the tests), **use at your own risk 🤓**
-
-
 TL;DR
 -----
 .. tldr-start
@@ -50,6 +47,8 @@ This module provides a universal interface for various communications systems an
 
 Installation
 ------------
+
+**WARNING:** This module is in early alpha stage. And while the code works (and passes all the tests), **use at your own risk 🤓**
 
 .. install-start
 

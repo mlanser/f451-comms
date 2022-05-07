@@ -8,6 +8,8 @@ Welcome!
 Installation
 ------------
 
+.. warning:: This module is in early alpha stage. And while the code works (and passes all the tests), **use at your own risk 🤓**
+
 .. include:: ../README.rst
     :start-after: install-start
     :end-before: install-end
