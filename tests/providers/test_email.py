@@ -1,10 +1,11 @@
 """Test cases for the generic email provider module."""
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.email as email
-from src.f451_comms.entity import Entity
-from src.f451_comms.exceptions import InvalidAttributeError
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.email as email
+from f451_comms.entity import Entity
+from f451_comms.exceptions import InvalidAttributeError
+from f451_comms.exceptions import MissingAttributeError
 
 
 # =========================================================

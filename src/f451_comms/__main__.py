@@ -12,17 +12,17 @@ from typing import Dict
 from typing import List
 
 import konsole
-import src.f451_comms.constants as const
 from faker import Faker
 from rich import print as rprint
 from rich import traceback
 from rich.rule import Rule
-from src.f451_comms.comms import Comms
-from src.f451_comms.exceptions import CommunicationsError
-from src.f451_comms.exceptions import MissingAttributeError
 
+import f451_comms.constants as const
 from . import __app_name__
 from . import __version__
+from f451_comms.comms import Comms
+from f451_comms.exceptions import CommunicationsError
+from f451_comms.exceptions import MissingAttributeError
 
 
 # =========================================================

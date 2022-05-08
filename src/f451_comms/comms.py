@@ -21,14 +21,14 @@ from typing import Dict
 from typing import List
 from typing import Union
 
-import src.f451_comms.constants as const
-import src.f451_comms.providers.provider as provider
-import src.f451_comms.utils as utils
-from src.f451_comms.exceptions import InvalidProviderError
-from src.f451_comms.providers.mailgun import Mailgun
-from src.f451_comms.providers.slack import Slack
-from src.f451_comms.providers.twilio import Twilio
-from src.f451_comms.providers.twitter import Twitter
+import f451_comms.constants as const
+import f451_comms.providers.provider as provider
+import f451_comms.utils as utils
+from f451_comms.exceptions import InvalidProviderError
+from f451_comms.providers.mailgun import Mailgun
+from f451_comms.providers.slack import Slack
+from f451_comms.providers.twilio import Twilio
+from f451_comms.providers.twitter import Twitter
 
 # =========================================================
 #          G L O B A L S   A N D   H E L P E R S

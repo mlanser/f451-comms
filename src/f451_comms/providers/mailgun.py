@@ -16,15 +16,16 @@ from typing import Dict
 from typing import List
 
 import requests
-import src.f451_comms.constants as const
-import src.f451_comms.utils as utils
-from src.f451_comms.exceptions import MissingAttributeError
-from src.f451_comms.processor import AttributeProcessor
-from src.f451_comms.providers.email import Attachments
-from src.f451_comms.providers.email import BaseEmail
-from src.f451_comms.providers.email import CcEmail
-from src.f451_comms.providers.email import ToEmail
-from src.f451_comms.providers.provider import Response
+
+import f451_comms.constants as const
+import f451_comms.utils as utils
+from f451_comms.exceptions import MissingAttributeError
+from f451_comms.processor import AttributeProcessor
+from f451_comms.providers.email import Attachments
+from f451_comms.providers.email import BaseEmail
+from f451_comms.providers.email import CcEmail
+from f451_comms.providers.email import ToEmail
+from f451_comms.providers.provider import Response
 
 # =========================================================
 #          G L O B A L S   A N D   H E L P E R S

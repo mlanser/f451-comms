@@ -20,7 +20,7 @@ from typing import Dict
 from typing import Iterator
 from typing import List
 
-import src.f451_comms.utils as utils
+import f451_comms.utils as utils
 
 # =========================================================
 #       G L O B A L S   A N D   D E S C R I P T O R S

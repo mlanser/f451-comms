@@ -18,16 +18,17 @@ from typing import Dict
 from typing import List
 from typing import Tuple
 
-import src.f451_comms.constants as const
-import src.f451_comms.providers.provider as provider
-import src.f451_comms.utils as utils
 import tweepy
-from src.f451_comms.entity import dedupe_by_attribute
-from src.f451_comms.entity import Entity
-from src.f451_comms.entity import process_entity_list_by_key
-from src.f451_comms.exceptions import CommunicationsError
-from src.f451_comms.exceptions import MissingAttributeError
-from src.f451_comms.processor import AttributeProcessor
+
+import f451_comms.constants as const
+import f451_comms.providers.provider as provider
+import f451_comms.utils as utils
+from f451_comms.entity import dedupe_by_attribute
+from f451_comms.entity import Entity
+from f451_comms.entity import process_entity_list_by_key
+from f451_comms.exceptions import CommunicationsError
+from f451_comms.exceptions import MissingAttributeError
+from f451_comms.processor import AttributeProcessor
 
 # =========================================================
 #          G L O B A L S   A N D   H E L P E R S

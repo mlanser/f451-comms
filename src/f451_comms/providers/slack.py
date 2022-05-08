@@ -19,14 +19,15 @@ from typing import Dict
 from typing import List
 from typing import Tuple
 
-import src.f451_comms.constants as const
-import src.f451_comms.providers.provider as provider
-import src.f451_comms.utils as utils
 from slack_sdk import WebClient  # type: ignore[attr-defined]
 from slack_sdk.errors import SlackApiError
-from src.f451_comms.entity import Entity
-from src.f451_comms.exceptions import CommunicationsError
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.provider as provider
+import f451_comms.utils as utils
+from f451_comms.entity import Entity
+from f451_comms.exceptions import CommunicationsError
+from f451_comms.exceptions import MissingAttributeError
 
 # =========================================================
 #          G L O B A L S   A N D   H E L P E R S

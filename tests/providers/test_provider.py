@@ -1,9 +1,10 @@
 """Test cases for the generic 'provider' (base class) module."""
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.provider as provider
-from src.f451_comms.exceptions import CommunicationsError
-from src.f451_comms.exceptions import InvalidAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.provider as provider
+from f451_comms.exceptions import CommunicationsError
+from f451_comms.exceptions import InvalidAttributeError
 
 
 # =========================================================
