@@ -7,9 +7,10 @@ from unittest import mock  # noqa: F401
 
 import pytest
 from faker import Faker  # noqa: F401
-from src.f451_comms import __app_name__
-from src.f451_comms import __main__
-from src.f451_comms import __version__
+
+from f451_comms import __app_name__
+from f451_comms import __main__
+from f451_comms import __version__
 
 
 # =========================================================

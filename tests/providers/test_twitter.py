@@ -2,13 +2,14 @@
 import uuid
 
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.provider as provider
-import src.f451_comms.providers.twitter as twitter
 import tweepy
-from src.f451_comms.entity import Entity
-from src.f451_comms.exceptions import CommunicationsError
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.provider as provider
+import f451_comms.providers.twitter as twitter
+from f451_comms.entity import Entity
+from f451_comms.exceptions import CommunicationsError
+from f451_comms.exceptions import MissingAttributeError
 
 # =========================================================
 #     G L O B A L S   &   P Y T E S T   F I X T U R E S

@@ -2,11 +2,12 @@
 from pathlib import PurePath
 
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.slack as slack
 from slack_sdk import WebClient
-from src.f451_comms.exceptions import InvalidAttributeError
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.slack as slack
+from f451_comms.exceptions import InvalidAttributeError
+from f451_comms.exceptions import MissingAttributeError
 
 # =========================================================
 #     G L O B A L S   &   P Y T E S T   F I X T U R E S

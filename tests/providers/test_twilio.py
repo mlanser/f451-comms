@@ -2,10 +2,11 @@
 from configparser import ConfigParser  # noqa: F401
 
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.twilio as twilio
 from pytest_mock import MockerFixture  # noqa: F401
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.twilio as twilio
+from f451_comms.exceptions import MissingAttributeError
 
 
 # =========================================================

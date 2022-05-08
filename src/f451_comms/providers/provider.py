@@ -13,15 +13,16 @@ from typing import Any
 from typing import List
 from typing import Optional
 
-import src.f451_comms.constants as const
-import src.f451_comms.utils as utils
 from requests import Response as reqResponse
 from rich import print as rprint
 from rich.pretty import pprint as rpp
 from rich.rule import Rule
-from src.f451_comms.exceptions import CommunicationsError
-from src.f451_comms.exceptions import InvalidAttributeError
-from src.f451_comms.processor import AttributeProcessor
+
+import f451_comms.constants as const
+import f451_comms.utils as utils
+from f451_comms.exceptions import CommunicationsError
+from f451_comms.exceptions import InvalidAttributeError
+from f451_comms.processor import AttributeProcessor
 
 __all__ = [
     "Media",

@@ -3,11 +3,12 @@ from configparser import ConfigParser
 
 import pytest
 import tweepy
-from src.f451_comms.comms import Comms
-from src.f451_comms.providers.mailgun import Mailgun
-from src.f451_comms.providers.slack import Slack
-from src.f451_comms.providers.twilio import Twilio
-from src.f451_comms.providers.twitter import Twitter
+
+from f451_comms.comms import Comms
+from f451_comms.providers.mailgun import Mailgun
+from f451_comms.providers.slack import Slack
+from f451_comms.providers.twilio import Twilio
+from f451_comms.providers.twitter import Twitter
 
 # =========================================================
 #     G L O B A L S   &   P Y T E S T   F I X T U R E S

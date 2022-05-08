@@ -1,8 +1,9 @@
 """Test cases for 'Mailgun' provider module."""
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.mailgun as mailgun
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.mailgun as mailgun
+from f451_comms.exceptions import MissingAttributeError
 
 
 # =========================================================

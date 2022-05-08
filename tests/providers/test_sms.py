@@ -2,10 +2,11 @@
 import re
 
 import pytest
-import src.f451_comms.constants as const
-import src.f451_comms.providers.sms as sms
-from src.f451_comms.entity import Entity
-from src.f451_comms.exceptions import MissingAttributeError
+
+import f451_comms.constants as const
+import f451_comms.providers.sms as sms
+from f451_comms.entity import Entity
+from f451_comms.exceptions import MissingAttributeError
 
 
 # =========================================================

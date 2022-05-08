@@ -9,15 +9,15 @@ from typing import Any
 from typing import List
 from typing import Tuple
 
-import src.f451_comms.constants as const
-import src.f451_comms.utils as utils
-from src.f451_comms.entity import dedupe_by_attribute
-from src.f451_comms.entity import Entity
-from src.f451_comms.exceptions import InvalidAttributeError
-from src.f451_comms.exceptions import MissingAttributeError
-from src.f451_comms.processor import AttributeProcessor
-from src.f451_comms.providers.provider import Provider
-from src.f451_comms.providers.provider import verify_file
+import f451_comms.constants as const
+import f451_comms.utils as utils
+from f451_comms.entity import dedupe_by_attribute
+from f451_comms.entity import Entity
+from f451_comms.exceptions import InvalidAttributeError
+from f451_comms.exceptions import MissingAttributeError
+from f451_comms.processor import AttributeProcessor
+from f451_comms.providers.provider import Provider
+from f451_comms.providers.provider import verify_file
 
 # =========================================================
 #          G L O B A L S   A N D   H E L P E R S

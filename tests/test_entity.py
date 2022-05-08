@@ -1,6 +1,7 @@
 """Test cases for 'entity' module."""
 import pytest
-import src.f451_comms.entity as entity
+
+import f451_comms.entity as entity
 
 
 # =========================================================

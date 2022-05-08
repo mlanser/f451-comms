@@ -2,7 +2,8 @@
 from configparser import ConfigParser
 
 import pytest
-import src.f451_comms.utils as utils
+
+import f451_comms.utils as utils
 
 
 # =========================================================
