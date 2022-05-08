@@ -36,12 +36,78 @@ f451 Communications module
    :alt: Black
 
 
-Features
---------
+TL;DR
+-----
+.. tldr-start
 
-.. warning:: This module is still pre-pre-pre-long-way-to-go-to-alpha! And the code works (and passes all the tests), **use at your own risk 🤓**
+This module provides a universal interface for various communications systems and services (e.g. email, Slack, SMS, etc.) and makes it possible to send the same message to several services with a single method call. The same call structure is used regardless of which services are enabled.
 
-This module provides a universal interface for various communications systems and services (e.g. email, Slack, SMS, etc.). In other words: we can send the same message to several channels/services with a single call. We can also use the same call structure regardless of which channels/services are enabled.
+.. tldr-end
+
+
+Installation
+------------
+
+**WARNING:** This module is in early alpha stage. And while the code works (and passes all the tests), **use at your own risk 🤓**
+
+.. install-start
+
+You can install the *f451 Communications* module via `pip <https://pip.pypa.io/en/stable/#>`__ from `PyPi <https://pypi.org/>`__:
+
+.. code:: console
+
+   $ pip install f451-comms
+
+.. install-end
+
+Please see the section "`Installation`_" in the `main documentation <https://f451-comms.readthedocs.io/>`__ for more information.
+
+
+Quickstart
+----------
+
+.. qs-start
+
+A common use case for the *f451 Communications* module is in applications that send (usually programmatically generated) messages via one or more channels. The module assumes that you provide all necessary keys and secrets required to verify your credentials with the services linked to the channels that you want to use.
+
+It is recommended that you store these keys and secrets in a separate file (e.g. ``secrets.ini``). However, it is also possible to submit them -- for example during testing -- in the form of a so-called ``dict`` structure.
+
+.. code-block::
+
+    from configparser import ConfigParser, ExtendedInterpolation
+    from f451_comms.comms import Comms
+
+    secrets = ConfigParser(interpolation=ExtendedInterpolation())
+    secrets.read("_PATH_TO_YOUR_SECRETS_FILE_")
+
+    comms = Comms(secrets)
+    comms.send_message("Hello world!", "all")
+
+The basic sequence is to first initialize the ``Comms`` object with the keys and secrets required to authenticate with the services that you want to use. After that you can send messages to one or more channels with a single method call to the ``Comms`` object.
+
+The ``send_message()`` method also has a 3rd argument that allows you to include additional attributes using a ``dict`` structure. These attributes can contain a wide variety of items. For example, you can include the HTML version of an email, or Slack blocks for more complex Slack messages. You can also include references to images to be included with the message, or files to be attached to emails, and so on.
+
+.. qs-end
+
+Please see the section "`Getting started`_" in the `main documentation <https://f451-comms.readthedocs.io/>`__ for more information.
+
+
+Run a demo of this module
+-------------------------
+
+.. demo-start
+
+This module comes with a demo that allows you to experiment with sending messages to the various channels. Of course, you must first ensure that you have accounts with the services that you want to experiment with. You must also provide the appropriate credentials when starting the demo or it will simply fail to authenticate with the services you're trying to use.
+
+.. demo-end
+
+Please see the section "`Run demo`_" in the `main documentation <https://f451-comms.readthedocs.io/>`__ for more information.
+
+
+Background
+----------
+
+.. bkgrnd-start
 
 This module was originally created to "scratch an itch" -- or, as we say in marketing parlance: to solve a particular use case. 😉 -- I had several single-purpose applications running on different devices (e.g. `Raspberry Pi <https://www.raspberrypi.org/>`_) configured to support specific hardware configurations (i.e. sensors and displays, etc.), services, or functions. And all applications were designed to notify me via different channels that certain events had occurred and so on.
 
@@ -60,71 +126,16 @@ But most importantly, I'm able to call a simple ``send_message()`` method, which
 
 **Future support:**
 
-- Other - *I know, this is really specific* 😜
+- Other - *I know, this is really specific ... but there will be more* 😜
 
+.. bkgrnd-end
 
-Requirements and dependencies
------------------------------
+Documentation
+-------------
 
-The *f451 Communications* module acts as an abstraction layer on top of existing communications packages, and in order for it to work, you need to first install the underlying packages and get accounts with the associated services.
+Please refer to the `documentation <https://f451-comms.readthedocs.io/>`__ for more information.
 
-Please note, that you do not have to use all services. In the end, config files (e.g. ``secrets.ini`` and ``config.ini``) define which services are enabled. Conversely, if you enable a service where you do not have the proper API keys, etc., then the module will raise exceptions when authentication fails due to missing and/or invalid credentials.
-
-- **email** -- account at `Mailgun <https://mailgun.com>`__
-- **Slack** -- account at `Slack <https://slack.com>`__
-- **SMS** -- account at `Twilio <https://twilio.com>`__
-- **Twitter** -- account at `Twitter <https://slack.com>`__
-
-This module also relies on a few specialized communications libraries which are installed automatically as dependencies:
-
-- **email** -- `requests <https://docs.python-requests.org/en/latest/>`__
-- **Slack** -- `Python Slack SDK <https://github.com/SlackAPI/python-slack-sdk>`__
-- **Twilio** (SMS) -- `Twilio Python <https://github.com/twilio/twilio-python>`__
-- **Twitter** -- `Tweepy <https://docs.tweepy.org/en/stable/index.html>`__
-
-.. note:: Please review the documentation for each sub-module for additional information.
-
-
-Installation
-------------
-
-You can install the *f451 Communications* module via pip_ from PyPI_:
-
-.. code:: console
-
-   $ pip install f451-comms
-
-
-Quickstart
-----------
-
-A common use case for the *f451 Communications* module is in applications that send (usually programmatically generated) messages via one or more channels. The module assumes that you provide all necessary keys and secrets required to verify your credentials with the services linked to the channels that you want to use.
-
-It is recommended that you store these keys and secrets in a separate file (e.g. ``secrets.ini``). However, it is also possible to submit them -- for example during testing -- in the form of a so-called ``dict`` structure. Please review the section "`Configuration files`_" for more information.
-
-.. code-block::
-
-    from configparser import ConfigParser, ExtendedInterpolation
-    from f451_comms.comms import Comms
-
-    secrets = ConfigParser(interpolation=ExtendedInterpolation())
-    secrets.read("_PATH_TO_YOUR_SECRETS_FILE_")
-
-    comms = Comms(secrets)
-    comms.send_message("Some clever message", "all")
-
-The basic sequence is to first initialize the ``Comms`` object with the keys and secrets required to authenticate with the services that you want to use. After that you can send messages to one or more channels with a single method call to the ``Comms`` object.
-
-The ``send_message()`` method also has a 3rd argument that allows you to include additional attributes using a ``dict`` structure. These attributes can contain a wide variety of items. For example, you can include the HTML version of an email, or Slack blocks for more complex Slack messages. You can also include references to images to be included with the message, or files to be attached to emails, and so on.
-
-
-Run a demo of this module
--------------------------
-
-This module comes with a demo that allows you to experiment with sending messages to the various channels. Of course, you must first ensure that you have accounts with the services that you want to experiment with. You must also provide the appropriate credentials when starting the demo or it will simply fail to authenticate with the services you're trying to use.
-
-Please see the section "`Run demo`_" for more information.
-
+.. misc-start
 
 Contributing
 ------------
@@ -135,7 +146,7 @@ Contributions are very welcome. To learn more, see the `Contributor Guide`_.
 License
 -------
 
-Distributed under the terms of the `MIT license`_, *f451 Communications* module is free and open source software.
+Distributed under the terms of the `MIT license`_, the *f451 Communications* module is free and open source software.
 
 
 Issues
@@ -160,4 +171,6 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _Contributor Guide: CONTRIBUTING.rst
 .. _Usage: https://f451-comms.readthedocs.io/en/latest/usage.html
 .. _Configuration files: https://f451-comms.readthedocs.io/en/latest/config_files.html
+.. _Installation: https://f451-comms.readthedocs.io/en/latest/installation.html
+.. _Getting started: https://f451-comms.readthedocs.io/en/latest/quickstart.html
 .. _Run demo: https://f451-comms.readthedocs.io/en/latest/demo.html
