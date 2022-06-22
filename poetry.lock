@@ -1243,7 +1243,7 @@ test = ["pytest", "typing-extensions", "mypy"]
 
 [[package]]
 name = "types-requests"
-version = "2.27.25"
+version = "2.27.31"
 description = "Typing stubs for requests"
 category = "main"
 optional = false
@@ -1963,14 +1963,15 @@ tweepy = [
 ]
 twilio = [
     {file = "twilio-7.9.0-py2.py3-none-any.whl", hash = "sha256:8de17f6c75fef9e342a681d6ade1c59791120b0bf06f35db7f23f0604d78daa1"},
+    {file = "twilio-7.9.0.tar.gz", hash = "sha256:1e0dbf3b012206b35d644758735966e4f565c1b2c2b09b10f7c1ddd02db43a36"},
 ]
 typeguard = [
     {file = "typeguard-2.13.3-py3-none-any.whl", hash = "sha256:5e3e3be01e887e7eafae5af63d1f36c849aaa94e3a0112097312aabfa16284f1"},
     {file = "typeguard-2.13.3.tar.gz", hash = "sha256:00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4"},
 ]
 types-requests = [
-    {file = "types-requests-2.27.25.tar.gz", hash = "sha256:805ae7e38fd9d157153066dc4381cf585fd34dfa212f2fc1fece248c05aac571"},
-    {file = "types_requests-2.27.25-py3-none-any.whl", hash = "sha256:2444905c89731dbcb6bbcd6d873a04252445df7623917c640e463b2b28d2a708"},
+    {file = "types-requests-2.27.31.tar.gz", hash = "sha256:6fab97b99fea52b9c7b466a4dd93e06bb325bc7e7420475e87831026a8dd35cc"},
+    {file = "types_requests-2.27.31-py3-none-any.whl", hash = "sha256:1b6cf6a2bf57fd8018c1b636b69762900466fafddfb62e1330e092f3d4b0966a"},
 ]
 types-urllib3 = [
     {file = "types-urllib3-1.26.14.tar.gz", hash = "sha256:2a2578e4b36341ccd240b00fccda9826988ff0589a44ba4a664bbd69ef348d27"},
