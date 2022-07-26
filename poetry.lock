@@ -191,7 +191,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
+test = ["hypothesis (==3.55.3)", "flake8 (==3.7.8)"]
 
 [[package]]
 name = "coverage"
@@ -457,7 +457,7 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-dev = ["black", "flit", "mypy"]
+dev = ["mypy", "flit", "black"]
 
 [[package]]
 name = "livereload"
@@ -612,8 +612,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-dev = ["pre-commit", "tox"]
-testing = ["pytest", "pytest-benchmark"]
+testing = ["pytest-benchmark", "pytest"]
+dev = ["tox", "pre-commit"]
 
 [[package]]
 name = "pre-commit"
@@ -706,10 +706,10 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
+tests = ["coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)"]
+docs = ["zope.interface", "sphinx-rtd-theme", "sphinx"]
+dev = ["pre-commit", "mypy", "coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)", "cryptography (>=3.3.1)", "zope.interface", "sphinx-rtd-theme", "sphinx"]
 crypto = ["cryptography (>=3.3.1)"]
-dev = ["sphinx", "sphinx-rtd-theme", "zope.interface", "cryptography (>=3.3.1)", "pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)", "mypy", "pre-commit"]
-docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
-tests = ["pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)"]
 
 [[package]]
 name = "pyparsing"
@@ -933,14 +933,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "slack-bolt"
-version = "1.13.1"
+version = "1.14.3"
 description = "The Bolt Framework for Python"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-slack-sdk = ">=3.15.2,<4"
+slack-sdk = ">=3.17.2,<4"
 
 [package.extras]
 adapter = ["boto3 (<=2)", "bottle (>=0.12,<1)", "chalice (>=1.26.5,<2)", "click (>=7,<8)", "CherryPy (>=18,<19)", "Django (>=3,<5)", "falcon (>=2,<4)", "fastapi (>=0.70.0,<1)", "Flask (>=1,<3)", "Werkzeug (>=2,<3)", "pyramid (>=1,<3)", "sanic (>=21,<22)", "starlette (>=0.14,<1)", "tornado (>=6,<7)", "uvicorn (<1)", "gunicorn (>=20,<21)", "websocket-client (>=1.2.3,<2)"]
@@ -951,7 +951,7 @@ testing_without_asyncio = ["pytest (>=6.2.5,<7)", "pytest-cov (>=3,<4)", "Flask-
 
 [[package]]
 name = "slack-sdk"
-version = "3.16.0"
+version = "3.18.1"
 description = "The Slack API Platform SDK for Python"
 category = "main"
 optional = false
@@ -959,7 +959,7 @@ python-versions = ">=3.6.0"
 
 [package.extras]
 optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=10,<11)", "websocket-client (>=1,<2)"]
-testing = ["pytest (>=6.2.5,<7)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "Flask (>=1,<2)", "Werkzeug (<2)", "itsdangerous (==2.0.1)", "Jinja2 (==3.0.3)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=4,<5)", "black (==22.3.0)", "click (==8.0.4)", "psutil (>=5,<6)", "databases (>=0.5)", "boto3 (<=2)", "moto (>=3,<4)"]
+testing = ["pytest (>=6.2.5,<7)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "Flask (>=1,<2)", "Werkzeug (<2)", "itsdangerous (==1.1.0)", "Jinja2 (==3.0.3)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=4,<5)", "black (==22.3.0)", "click (==8.0.4)", "psutil (>=5,<6)", "databases (>=0.5)", "boto3 (<=2)", "moto (>=3,<4)"]
 
 [[package]]
 name = "smmap"
@@ -1073,7 +1073,7 @@ docutils = "<0.18"
 sphinx = ">=1.6"
 
 [package.extras]
-dev = ["transifex-client", "sphinxcontrib-httpdomain", "bump2version"]
+dev = ["bump2version", "sphinxcontrib-httpdomain", "transifex-client"]
 
 [[package]]
 name = "sphinxcontrib-applehelp"
@@ -1084,8 +1084,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-devhelp"
@@ -1096,8 +1096,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-htmlhelp"
@@ -1108,8 +1108,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
-test = ["pytest", "html5lib"]
+test = ["html5lib", "pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-jsmath"
@@ -1120,7 +1120,7 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-test = ["pytest", "flake8", "mypy"]
+test = ["mypy", "flake8", "pytest"]
 
 [[package]]
 name = "sphinxcontrib-qthelp"
@@ -1131,8 +1131,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-serializinghtml"
@@ -1832,12 +1832,12 @@ six = [
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 slack-bolt = [
-    {file = "slack_bolt-1.13.1-py2.py3-none-any.whl", hash = "sha256:cf21379a8c5b36be49fa139b3478a53eb1cbac837cad7ff53be9f196a219296f"},
-    {file = "slack_bolt-1.13.1.tar.gz", hash = "sha256:979f113bd53b1868a6b71da7751b83cb2cbc8f2edeb7fe2a6c8e6f61cf97b55e"},
+    {file = "slack_bolt-1.14.3-py2.py3-none-any.whl", hash = "sha256:c99bf8bca2f9fbe21a2712ae319f0a26a86f715d54f44de61d55bd0f8c3d4d5a"},
+    {file = "slack_bolt-1.14.3.tar.gz", hash = "sha256:0be5a3f54bb5c0cbeea79d6ffc7130ddf3ca21a81bb7ba5bc3b5de2a6da56e1d"},
 ]
 slack-sdk = [
-    {file = "slack_sdk-3.16.0-py2.py3-none-any.whl", hash = "sha256:dfa3d79539f25c5736a9026a68cf429d73bc697e1210de3b74e4bacaf7ffd5cc"},
-    {file = "slack_sdk-3.16.0.tar.gz", hash = "sha256:ad7b7cca57c7da40dd9db680ebd3ca6833e9e2777b90ada8767c661d79582cf0"},
+    {file = "slack_sdk-3.18.1-py2.py3-none-any.whl", hash = "sha256:63ce5e6253a31873d6c921c9feaa842a93a2f56e6e009cb7daf406f4bc4df798"},
+    {file = "slack_sdk-3.18.1.tar.gz", hash = "sha256:a25d3d2bf0bf605d54d764d4a463fe7c0659ee24c13d75653e2bec247bd5998b"},
 ]
 smmap = [
     {file = "smmap-5.0.0-py3-none-any.whl", hash = "sha256:2aba19d6a040e78d8b09de5c57e96207b09ed71d8e55ce0959eeee6c8e190d94"},
@@ -1963,6 +1963,7 @@ tweepy = [
 ]
 twilio = [
     {file = "twilio-7.9.0-py2.py3-none-any.whl", hash = "sha256:8de17f6c75fef9e342a681d6ade1c59791120b0bf06f35db7f23f0604d78daa1"},
+    {file = "twilio-7.9.0.tar.gz", hash = "sha256:1e0dbf3b012206b35d644758735966e4f565c1b2c2b09b10f7c1ddd02db43a36"},
 ]
 typeguard = [
     {file = "typeguard-2.13.3-py3-none-any.whl", hash = "sha256:5e3e3be01e887e7eafae5af63d1f36c849aaa94e3a0112097312aabfa16284f1"},
